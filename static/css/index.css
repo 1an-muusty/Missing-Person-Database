@@ -1,0 +1,81 @@
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 20px;
+    height: 100%;
+}
+.navbar {
+    background-color: #000; /* Black */
+    padding: 15px 20px; /* Increase the height */
+}
+.navbar a {
+    color: #fff; /* White text for contrast */
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #d50000; /* Red */
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.feature {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.feature:hover {
+    transform: scale(1.05);
+}
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    padding: 1rem 0;
+    background-color: #343a40; 
+    color: white;
+   
+}
+
+.image-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://via.placeholder.com/1200x300.png?text=Missing+Persons+Registry');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    width: 100%; /* Ensure the search bar container takes full width */
+    max-width: 100%; /* Ensure there’s no maximum limit on the width */
+    position: relative;
+    margin-top: 20px;
+}
+
+.search-input {
+    width: 100%; /* Make the input take the full width of the parent container */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding-left: 40px; /* Space for the search icon */
+    height: 40px; /* Set a specific height to avoid excess space */
+    box-sizing: border-box; /* Ensure padding is included in width and height */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    font-size: 18px;
+    color: #888;
+    pointer-events: none; /* Ensure the icon does not block input */
+}
+

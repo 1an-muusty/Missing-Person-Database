@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+        <br><br>
+
+        <h1>Access Denied</h1>
+        <p>You must have an account for you to report a case</p>
+        <a href="{% url 'login' %}"><button>Click here to log in</button></a>
+        <a href="{% url 'register' %}"><button>Click here to register</button></a>
+        <br> <br>
+
+
+    </center>
+    
+{% endblock %}
+
+

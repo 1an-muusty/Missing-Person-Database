@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="bg-dark py-2">
+        <div class="container px-2 px-lg-1 my-1">
+            <div class="text-center text-white">
+                <h2 class="fw-bolder">Missing Person</h2>
+                <p class="lead fw-normal text-white-50 mb-0">Details for {{ missing_person.fname }} {{ missing_person.lname }}</p>
+            </div>
+        </div>
+    </header>
+    <br>
+    <div class="container">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ missing_person.uploadPhoto.url }}" class="img-fluid" alt="Missing Person">
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="card-title">{{ missing_person.fname }} {{ missing_person.lname }}</h3>
+                        <p class="card-text"><strong>Age:</strong> {{ missing_person.age }}</p>
+                        <p class="card-text"><strong>Last Seen:</strong> {{ missing_person.lastSeenDate }}, {{ missing_person.lastSeenLocation }}</p>
+                        <p class="card-text"><strong>Description:</strong> {{ missing_person.description }}</p>
+                        <p class="card-text"><strong>Contact:</strong> {{ missing_person.contactInformation }}</p>
+                        <p class="card-text"><strong>Status:</strong> {{ missing_person.status }}</p>
+
+                        <a href="{% url 'view_missing_persons' %}" val class="btn btn-success">Back to database</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

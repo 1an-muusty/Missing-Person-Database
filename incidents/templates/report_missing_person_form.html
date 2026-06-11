@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Header -->
+<header class="bg-dark py-2">
+    <div class="container px-4 px-lg-5 my-2">
+        <div class="text-center text-white">
+            <h1 class="display-6 fw-bolder">Report Form</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Report a missing person</p>
+        </div>
+    </div>
+</header>
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <p align="justify">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <br>
+                    <button type="submit" class="btn btn-secondary btn-lg mx-auto d-block">Report</button>
+                </form>
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}

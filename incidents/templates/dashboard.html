@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="bg-dark py-2">
+    <div class="container text-white text-center">
+        <h2>User Dashboard</h2>
+    </div>
+</header>
+<div class="container mt-4">
+    <h3>Your Reports</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Last Seen</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <td><img src="{{ report.uploadPhoto.url }}" alt="Photo" class="img-thumbnail" style="width: 100px;"></td>
+                <td>{{ report.fname }} {{ report.lname }}</td>
+                <td>{{ report.lastSeenDate }}, {{ report.lastSeenLocation }}</td>
+                <td>{{ report.status }}</td>
+                <td>
+                    <a href="{% url 'edit_report' report.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_report' report.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

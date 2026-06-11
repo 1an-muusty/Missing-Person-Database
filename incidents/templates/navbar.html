@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> 
+        <ul class="navbar-nav">
+            <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'view_missing_persons' %}active{% endif %}">
+                <a class="nav-link text-white" href="{% url 'view_missing_persons' %}">View Database</a>
+            </li>
+            <li class="nav-item {% if request.resolver_match.url_name == 'report_missing_person' %}active{% endif %}">
+                <a class="nav-link text-white" href="{% url 'report_missing_person' %}">Report Case</a>
+            </li>    
+            
+            <!-- 
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Support Services</a>
+            </li> 
+            -->
+            {% if user.is_authenticated %}
+            <li class="nav-item {% if request.resolver_match.url_name == 'user_dashboard' %}active{% endif %}">
+                <a class="nav-link text-white" href="{% url 'user_dashboard' %}">My Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
+            </li>    
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+            </li>    
+            {% endif %}
+        </ul>
+    </div>
+</nav>
